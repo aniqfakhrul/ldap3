@@ -92,6 +92,12 @@ setup(name=package_name,
       long_description=long_description,
       keywords='python3 python2 ldap',
       url=url,
+      extras_require={
+          "kerberos": [
+              "winkerberos; platform_system=='Windows'",
+              "gssapi; platform_system!='Windows'",
+          ],
+      },
       classifiers=['Development Status :: 5 - Production/Stable',
                    'Intended Audience :: Developers',
                    'Intended Audience :: System Administrators',
